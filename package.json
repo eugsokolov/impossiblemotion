@@ -2,7 +2,7 @@
   "name": "impossible-motion",
   "version": "0.0.1",
   "private": true,
-  "homepage": "https://impossiblemotion.io",
+  "homepage": "https://github.io",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
