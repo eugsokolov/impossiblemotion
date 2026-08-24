@@ -13,7 +13,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "copy-demos": "node -e \"const fs=require('fs');const path=require('path');fs.cpSync('demos', path.join('build','demos'), {recursive:true})\"",
+    "copy-demos": "node -e \"const fs=require('fs');const path=require('path');fs.cpSync('demos', path.join('build','demos'), {recursive:true, errorOnExist:false})\"",
     "build": "react-scripts build && npm run copy-demos",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
