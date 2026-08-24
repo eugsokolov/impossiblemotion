@@ -10,7 +10,7 @@ const Thumbnail = ({ s3Bucket, s3KeyName }) => {
   useEffect(() => {
     const fetchMetadata = async () => {
       try {
-        const response = await fetch(`${assetBaseUrl}/metadata.json`);
+        const response = await fetch(`${process.env.PUBLIC_URL}/demos/${s3KeyName}/metadata.json`);
         const data = await response.json();
         setMetadata(data);
       } catch (error) {
@@ -19,7 +19,7 @@ const Thumbnail = ({ s3Bucket, s3KeyName }) => {
     };
 
     fetchMetadata();
-  }, [assetBaseUrl, s3KeyName]);
+  }, [s3KeyName]);
 
   useEffect(() => {
     const preloadImage = (src) => {

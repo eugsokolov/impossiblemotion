@@ -269,10 +269,10 @@ function createWorker(self) {
   };
 }
 
-const bucketUrl = 'https://impossible-motion-assets.s3.amazonaws.com';
+const demosUrl = '/demos';
 
-async function fetchFileFromS3(bucketUrl, key) {
-  const url = `${bucketUrl}/${key}`;
+async function fetchDemoFile(key) {
+  const url = `${demosUrl}/${key}`;
   try {
     const response = await fetch(url);
 
@@ -283,7 +283,7 @@ async function fetchFileFromS3(bucketUrl, key) {
     console.log('response', response)
     return response;
   } catch (err) {
-    console.error('Error fetching file from S3:', err);
+    console.error('Error fetching demo file:', err);
   }
 }
 
@@ -424,7 +424,7 @@ async function main() {
   const params = new URLSearchParams(location.search);
 
   const metadataKey = `${asset}/metadata.json`
-  const metadataReq = await fetchFileFromS3(bucketUrl, metadataKey)
+  const metadataReq = await fetchDemoFile(metadataKey)
   const metadata = await parseReaderToJson(metadataReq.body.getReader());
 
   const defaultViewMatrix = metadata.defaultViewMatrix;
@@ -1106,7 +1106,7 @@ async function main() {
   };
 
   const splatvKey = `${asset}/${asset}.splatv`
-  const splatvReq = await fetchFileFromS3(bucketUrl, splatvKey);
+  const splatvReq = await fetchDemoFile(splatvKey);
   await readChunks(splatvReq.body.getReader(), [{ size: 8, type: "magic" }], chunkHandler);
 }
 

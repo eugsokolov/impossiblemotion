@@ -10,10 +10,11 @@
     "tailwindcss": "^3.0.23"
   },
   "scripts": {
-    "predeploy": "react-scripts build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "copy-demos": "node -e \"const fs=require('fs');const path=require('path');fs.cpSync('demos', path.join('build','demos'), {recursive:true})\"",
+    "build": "react-scripts build && npm run copy-demos",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
