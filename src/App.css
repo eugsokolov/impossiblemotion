@@ -1,0 +1,74 @@
+.gif-thumbnail {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.glitch {
+  text-shadow:
+    0.05em 0 0 rgba(255, 107, 107, .75),
+    -0.025em -0.05em 0 rgba(255, 107, 107, .75),
+    0.025em 0.05em 0 rgba(255, 107, 107, .75);
+  /* animation: glitch 500ms infinite; */
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow:
+      0.05em 0 0 rgba(255, 107, 107, .75),
+      -0.025em -0.05em 0 rgba(255, 107, 107, .75),
+      0.025em 0.05em 0 rgba(255, 107, 107, .75);
+  }
+  14% {
+    text-shadow:
+      0.05em 0 0 rgba(255, 107, 107, .75),
+      -0.025em -0.05em 0 rgba(255, 107, 107, .75),
+      0.025em 0.05em 0 rgba(255, 107, 107, .75);
+  }
+  15% {
+    text-shadow:
+      -0.05em -0.025em 0 rgba(255, 107, 107, .75),
+      0.025em 0.025em 0 rgba(255, 107, 107, .75),
+      -0.05em -0.05em 0 rgba(255, 107, 107, .75);
+  }
+  49% {
+    text-shadow:
+      -0.05em -0.025em 0 rgba(255, 107, 107, .75),
+      0.025em 0.025em 0 rgba(255, 107, 107, .75),
+      -0.05em -0.05em 0 rgba(255, 107, 107, .75);
+  }
+  50% {
+    text-shadow:
+      0.025em 0.05em 0 rgba(255, 107, 107, .75),
+      0.05em 0 0 rgba(255, 107, 107, .75),
+      0 -0.05em 0 rgba(255, 107, 107, .75);
+  }
+  99% {
+    text-shadow:
+      0.025em 0.05em 0 rgba(255, 107, 107, .75),
+      0.05em 0 0 rgba(255, 107, 107, .75),
+      0 -0.05em 0 rgba(255, 107, 107, .75);
+  }
+  100% {
+    text-shadow:
+      -0.025em 0 0 rgba(255, 107, 107, .75),
+      -0.025em -0.025em 0 rgba(255, 107, 107, .75),
+      -0.025em -0.05em 0 rgba(255, 107, 107, .75);
+  }
+}
+
+/* Add these new styles */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
