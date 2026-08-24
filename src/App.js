@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import ThumbnailGrid from './ThumbnailGrid';
 import Footer from './Footer';
+import { EMAIL_TO } from './consts';
 
 import 'tailwindcss/tailwind.css';
 import './App.css';
@@ -20,7 +21,7 @@ const App = () => (
 
       <div className="mt-20 text-center">
         <h3 className="text-xl font-semibold mb-4">Interested? Reach out.</h3>
-        <a href="mailto:hello@impossiblemotion.io" className="inline-block bg-transparent border border-accent text-accent hover:bg-accent hover:text-black font-semibold py-2 px-6 transition-colors duration-300">
+        <a href={`mailto:${EMAIL_TO}`} className="inline-block bg-transparent border border-accent text-accent hover:bg-accent hover:text-black font-semibold py-2 px-6 transition-colors duration-300">
           Contact
         </a>
       </div>
