@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/impossiblemotion/static/css/main.4303d38b.css",
-    "main.js": "/impossiblemotion/static/js/main.9c0442ff.js",
+    "main.js": "/impossiblemotion/static/js/main.a9036f4d.js",
     "index.html": "/impossiblemotion/index.html",
     "main.4303d38b.css.map": "/impossiblemotion/static/css/main.4303d38b.css.map",
-    "main.9c0442ff.js.map": "/impossiblemotion/static/js/main.9c0442ff.js.map"
+    "main.a9036f4d.js.map": "/impossiblemotion/static/js/main.a9036f4d.js.map"
   },
   "entrypoints": [
     "static/css/main.4303d38b.css",
-    "static/js/main.9c0442ff.js"
+    "static/js/main.a9036f4d.js"
   ]
 }
