@@ -34,7 +34,7 @@ const Thumbnail = ({ s3Bucket, s3KeyName }) => {
   return (
     <div className="viewer-thumbnail group">
       <a
-        href={`viewer.html?asset=${s3KeyName}`}
+        href={`${process.env.PUBLIC_URL}/viewer.html?asset=${s3KeyName}`}
         className="block"
         target="_blank"
         rel="noopener noreferrer"
