@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 
-const Thumbnail = ({ s3Bucket, s3KeyName }) => {
-  const assetBaseUrl = `https://${s3Bucket}.s3.amazonaws.com/${s3KeyName}`;
+const Thumbnail = ({ s3KeyName }) => {
+  const assetBaseUrl = `${process.env.PUBLIC_URL}/demos/${s3KeyName}`;
   const image = `${assetBaseUrl}/${s3KeyName}.png`;
   const gif = `${assetBaseUrl}/${s3KeyName}.gif`;
   const [metadata, setMetadata] = useState({});

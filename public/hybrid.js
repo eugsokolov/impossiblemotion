@@ -282,6 +282,7 @@ async function fetchDemoFile(key) {
     return response;
   } catch (err) {
     console.error('Error fetching demo file:', err);
+    throw err;
   }
 }
 
@@ -425,7 +426,10 @@ async function main() {
   const metadataReq = await fetchDemoFile(metadataKey)
   const metadata = await parseReaderToJson(metadataReq.body.getReader());
 
-  const defaultViewMatrix = metadata.defaultViewMatrix;
+  const defaultViewMatrix =
+    Array.isArray(metadata.defaultViewMatrix) && metadata.defaultViewMatrix.length === 16
+      ? metadata.defaultViewMatrix
+      : getViewMatrix(camera);
   let viewMatrix = defaultViewMatrix;
 
   try {
@@ -828,6 +832,10 @@ async function main() {
   let isJumping = activeKeys.includes("Space");
   const frame = (now) => {
     let inv = invert4(viewMatrix);
+    if (!inv) {
+      requestAnimationFrame(frame);
+      return;
+    }
 
     const rightNow = performance.now();
     if (!isPaused) {

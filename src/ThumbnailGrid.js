@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import Thumbnail from './Thumbnail';
 
-import { S3_BUCKET } from './consts';
-
 
 const ThumbnailGrid = () => {
   useEffect(() => {
@@ -21,18 +19,9 @@ const ThumbnailGrid = () => {
   // todo: should we be using something like gatsby.js?
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <Thumbnail
-        s3Bucket={S3_BUCKET}
-        s3KeyName="tennis-demo"
-      />
-      <Thumbnail
-        s3Bucket={S3_BUCKET}
-        s3KeyName="football-demo"
-      />
-      <Thumbnail
-        s3Bucket={S3_BUCKET}
-        s3KeyName="tennis-seg"
-      />
+      <Thumbnail s3KeyName="tennis-demo" />
+      <Thumbnail s3KeyName="football-demo" />
+      <Thumbnail s3KeyName="tennis-demo-long" />
     </div>
   );
 };
