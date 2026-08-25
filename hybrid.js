@@ -269,10 +269,8 @@ function createWorker(self) {
   };
 }
 
-const demosUrl = '/demos';
-
 async function fetchDemoFile(key) {
-  const url = `${demosUrl}/${key}`;
+  const url = new URL(`demos/${key}`, window.location.href).toString();
   try {
     const response = await fetch(url);
 
